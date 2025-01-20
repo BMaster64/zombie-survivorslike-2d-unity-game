@@ -5,15 +5,5 @@ Temp/
 Logs/
 Build/
 Builds/
-Packages/
-UserSettings/
 MemoryCaptures/
-*.csproj
-*.unitypackage
-*.sln
-.vscode/
-.idea/
-*.bak
-*.pidb
-*.userprefs
 

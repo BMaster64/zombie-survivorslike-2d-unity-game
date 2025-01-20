@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|h:\\fpt aint shit\\pru212\\test2\\my-repo\\survivorslike_zombie_game\\assets\\script\\newemptycsharpscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\newemptycsharpscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|h:\\fpt aint shit\\pru212\\test2\\my-repo\\survivorslike_zombie_game\\assets\\script\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\assets\\script\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NewEmptyCSharpScript.cs",
+              "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\NewEmptyCSharpScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\NewEmptyCSharpScript.cs",
+              "ToolTip": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\NewEmptyCSharpScript.cs",
+              "RelativeToolTip": "Assets\\Script\\NewEmptyCSharpScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T08:37:52.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyMovement.cs",
+              "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\EnemyMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\EnemyMovement.cs",
+              "ToolTip": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\EnemyMovement.cs",
+              "RelativeToolTip": "Assets\\Script\\EnemyMovement.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T08:20:58.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemySpawner.cs",
+              "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\EnemySpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\EnemySpawner.cs",
+              "ToolTip": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\EnemySpawner.cs",
+              "RelativeToolTip": "Assets\\Script\\EnemySpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T08:20:37.013Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 102,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

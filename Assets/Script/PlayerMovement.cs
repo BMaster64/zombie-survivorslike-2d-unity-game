@@ -19,10 +19,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
+
     void FixedUpdate()
     {
         Vector3 moveInput = new Vector3(0f, 0f, 0f);
@@ -33,10 +34,18 @@ public class PlayerMovement : MonoBehaviour
         moveInput.Normalize();
 
         theRigidbody.linearVelocity = moveInput * moveSpeed;
-        
-        if(moveInput != Vector3.zero)
+
+        if (moveInput != Vector3.zero)
         {
             animator.SetBool("Move", true);
+            if (moveInput.x > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1); // Facing right
+            }
+            else if (moveInput.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1); // Facing left
+            }
         }
         else
         {

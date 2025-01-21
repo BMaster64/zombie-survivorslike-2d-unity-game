@@ -67,7 +67,10 @@
   <ItemGroup>
     <Compile Include="Assets\Script\EnemyMovement.cs" />
     <Compile Include="Assets\Script\CameraMovement.cs" />
+    <Compile Include="Assets\Script\DamageNumber.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
+    <Compile Include="Assets\Script\DamageNumberController.cs" />
+    <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\TopTouch.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>

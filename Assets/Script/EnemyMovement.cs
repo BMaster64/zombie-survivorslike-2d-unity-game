@@ -51,11 +51,60 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 moveDirection = (target.position - transform.position).normalized;
         theRigidbody.linearVelocity = (target.position - transform.position).normalized * moveSpeed;
-
+        if (moveDirection.x > 0)
+        {
+            transform.localScale = new Vector3((float)-1.44766, (float)1.44766, 1);  // Face right
+        }
+        else if (moveDirection.x < 0)
+        {
+            transform.localScale = new Vector3((float)1.44766, (float)1.44766, 1); // Face left
+        }
         if (hitCounter > 0)
         {
             hitCounter -= Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var player = collision.gameObject.GetComponent<PlayerHealth>();
+
+        if (player)
+        {
+            player.TakeDamage(damage);
+
+            hitCounter = hitWaitTime;
+        }
+
+        /*if (PlayerHealth.instance.tag == "Player" && hitCounter <= 0f)
+        {
+            PlayerHealth.instance.TakeDamage(damage);
+
+            hitCounter = hitWaitTime;
+        }*/
+    }
+
+    public void TakeDamage(float damageToTake)
+    {
+        health -= damageToTake;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
+    }
+
+    public void TakeDamage(float damageToTake, bool shouldKnockBack)
+    {
+        TakeDamage(damageToTake);
+
+        if (shouldKnockBack)
+        {
+            knockBackCounter = knockBackTime;
         }
     }
 }

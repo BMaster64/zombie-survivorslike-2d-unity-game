@@ -93,8 +93,8 @@
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\Common\Utilities\Utils.cs" />
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\UnifiedRayTracingException.cs" />
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\Compute\RadeonRays\Scan.cs" />
-    <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\Compute\RadeonRays\RadeonRaysAPI.cs" />
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\Compute\RadeonRays\RadeonRaysAPI.cs" />
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\Compute\RadeonRays\RadixSort.cs" />
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\UnifiedRayTracing\Compute\RadeonRays\HlbvhTopLevelBuilder.cs" />
     <Compile Include="Library\PackageCache\com.unity.rendering.light-transport\Runtime\Sampling\SobolData.cs" />

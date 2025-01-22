@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -67,24 +67,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        var player = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if (player)
-        {
-            player.TakeDamage(damage);
-
-            hitCounter = hitWaitTime;
-        }
-
-        /*if (PlayerHealth.instance.tag == "Player" && hitCounter <= 0f)
-        {
-            PlayerHealth.instance.TakeDamage(damage);
-
-            hitCounter = hitWaitTime;
-        }*/
-    }
 
     public void TakeDamage(float damageToTake)
     {
@@ -107,4 +90,15 @@ public class EnemyMovement : MonoBehaviour
             knockBackCounter = knockBackTime;
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        var player = collision.gameObject.GetComponent<PlayerHealth>();
+
+        if (player && hitCounter <= 0f)
+        {
+            player.TakeDamage(damage);
+            hitCounter = hitWaitTime;  // Đặt lại bộ đếm thời gian để tránh mất máu liên tục quá nhanh
+        }
+    }
+
 }

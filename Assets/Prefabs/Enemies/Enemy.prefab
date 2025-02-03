@@ -236,3 +236,4 @@ MonoBehaviour:
   hitWaitTime: 1
   health: 10
   knockBackTime: 0.5
+  drop: {fileID: 1274436598764680933, guid: 72bf86e99f88aeb4096cefcf32813fc6, type: 3}

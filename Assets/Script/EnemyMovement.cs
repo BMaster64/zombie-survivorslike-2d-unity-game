@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public float knockBackTime = 0.5f;
     private float knockBackCounter;
 
+    public GameObject drop;
 
 
     // Start is called before the first frame update
@@ -76,6 +77,7 @@ public class EnemyMovement : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            Instantiate(drop, transform.position, drop.transform.rotation); 
         }
 
         DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
@@ -100,5 +102,4 @@ public class EnemyMovement : MonoBehaviour
             hitCounter = hitWaitTime;  // Đặt lại bộ đếm thời gian để tránh mất máu liên tục quá nhanh
         }
     }
-
 }

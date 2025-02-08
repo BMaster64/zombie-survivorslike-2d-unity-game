@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public Transform bulletTransform;
     public Transform player;  // Tham chiếu đến nhân vật để kiểm tra hướng
-
+    public SpriteRenderer crosshairSprite;
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
@@ -16,11 +16,19 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Cursor.visible = false; // Hide default cursor
     }
 
     void Update()
     {
         mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0; // Ensure crosshair is in the same plane
+        
+        // Update crosshair sprite position
+        if (crosshairSprite != null)
+        {
+            crosshairSprite.transform.position = mousePos;
+        }
 
         // Tính hướng từ rotatePoint đến chuột
         Vector3 direction = mousePos - transform.position;

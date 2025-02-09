@@ -10,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
 
     public float pickupRange = 2.5f;
 
+    private Transform healthbarTransform;
+
     private void Awake()
     {
         theRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        healthbarTransform = transform.Find("Healthbar");
     }
 
     // Start is called before the first frame update
@@ -41,10 +44,14 @@ public class PlayerMovement : MonoBehaviour
             if (moveInput.x > 0)
             {
                 transform.localScale = new Vector3(1, 1, 1); // Facing right
+                if (healthbarTransform != null)
+                    healthbarTransform.localScale = new Vector3((float).01, (float).01, 1);
             }
             else if (moveInput.x < 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1); // Facing left
+                if (healthbarTransform != null)
+                    healthbarTransform.localScale = new Vector3((float) -.01, (float).01, 1);
             }
         }
         else

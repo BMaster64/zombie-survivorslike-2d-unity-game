@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\EnemyMovement.cs" />
     <Compile Include="Assets\Script\EnemyDamager.cs" />
+    <Compile Include="Assets\Script\UpgradeOption.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Audio\CheckSFXVolume.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUI.cs" />
     <Compile Include="Assets\Script\CameraMovement.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Script\DamageNumber.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ExtraLinks.cs" />
     <Compile Include="Assets\Script\BulletScript.cs" />
+    <Compile Include="Assets\Script\LevelUpMenu.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\DamageNumberController.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UIMenuManager.cs" />

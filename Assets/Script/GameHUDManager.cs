@@ -37,9 +37,7 @@ public class GameHUDManager : MonoBehaviour
 
     public void TriggerLevelUpMenu()
     {
-        // Pause the game
-        // Time.timeScale = 0f;
-
-        // TODO: Show level up menu UI
+        LevelUpMenu.instance.OpenLevelUpMenu();
+        Cursor.visible = true;
     }
 }

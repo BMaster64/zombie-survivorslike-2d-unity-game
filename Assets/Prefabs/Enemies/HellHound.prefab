@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5756437211481891407}
   - component: {fileID: 8424112021730042047}
   - component: {fileID: 7179543890962316928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HellHound
   m_TagString: Enemy
   m_Icon: {fileID: 0}

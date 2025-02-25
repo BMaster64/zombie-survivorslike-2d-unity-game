@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class EnemyDamager : MonoBehaviour
 {
-    public float damageAmount;
+    public float baseDamage; // Rename damageAmount to baseDamage
+    private PlayerStats playerStats;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        playerStats = PlayerHealth.instance.GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,8 @@ public class EnemyDamager : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            collision.GetComponent<EnemyMovement>().TakeDamage(damageAmount);
+            float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
+            collision.GetComponent<EnemyMovement>().TakeDamage(finalDamage);
         }
     }
 }

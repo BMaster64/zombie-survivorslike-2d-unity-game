@@ -11,9 +11,12 @@ public class PlayerHealth : MonoBehaviour
 
     public Slider healthSlider;
 
+    private PlayerStats stats;
+
     private void Awake()
     {
         instance = this;
+        stats = GetComponent<PlayerStats>();
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
@@ -33,7 +36,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        float damageReduction = stats != null ? stats.currentDefense : 0f;
+        float actualDamage = damage * (1f - damageReduction);
+
+        currentHealth -= actualDamage;
 
         if(currentHealth <= 0)
         {

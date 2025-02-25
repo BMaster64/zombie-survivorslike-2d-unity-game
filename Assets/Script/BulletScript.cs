@@ -6,12 +6,14 @@ public class BulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
-    public float damageAmount;
+    public float baseDamage; 
+    private PlayerStats playerStats;
 
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
+        playerStats = PlayerHealth.instance.GetComponent<PlayerStats>();
 
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
@@ -26,7 +28,8 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            collision.GetComponent<EnemyMovement>().TakeDamage(damageAmount);
+            float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
+            collision.GetComponent<EnemyMovement>().TakeDamage(finalDamage);
             Destroy(gameObject);
         }
     }

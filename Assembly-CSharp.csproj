@@ -85,6 +85,7 @@
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UIMenuManager.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ResetDemo.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
+    <Compile Include="Assets\Script\WeaponsContainer.cs" />
     <Compile Include="Assets\Script\TopTouch.cs" />
     <Compile Include="Assets\Script\FlightKnife.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UISettingsManager.cs" />

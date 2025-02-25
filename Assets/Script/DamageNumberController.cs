@@ -19,13 +19,13 @@ public class DamageNumberController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SpawnDamage(float damageAmount, Vector3 location)
@@ -46,7 +46,7 @@ public class DamageNumberController : MonoBehaviour
     {
         DamageNumber numberToOutput = null;
 
-        if(numberPool.Count == 0)
+        if (numberPool.Count == 0)
         {
             numberToOutput = Instantiate(numberToSpawn, numberCanvas);
         }

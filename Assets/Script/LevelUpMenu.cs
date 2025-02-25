@@ -10,9 +10,6 @@ public class LevelUpMenu : MonoBehaviour
     public UpgradeOption[] upgradeOptionSlots;
     public int upgradeOptionsToShow = 3;
 
-    [Header("Available Upgrades")]
-    public List<Upgrade> allUpgrades = new List<Upgrade>();
-
     private void Awake()
     {
         instance = this;
@@ -24,7 +21,7 @@ public class LevelUpMenu : MonoBehaviour
         menuPanel.SetActive(true);
         Time.timeScale = 0f;
 
-        List<Upgrade> availableUpgrades = GetAvailableUpgrades();
+        List<UpgradeData> availableUpgrades = UpgradeManager.instance.GetAvailableUpgrades();
         ShuffleUpgrades(availableUpgrades);
 
         // Show upgrade options
@@ -42,12 +39,7 @@ public class LevelUpMenu : MonoBehaviour
         }
     }
 
-    List<Upgrade> GetAvailableUpgrades()
-    {
-        return allUpgrades.FindAll(upgrade => upgrade.level < upgrade.maxLevel);
-    }
-
-    void ShuffleUpgrades(List<Upgrade> upgrades)
+    void ShuffleUpgrades(List<UpgradeData> upgrades)
     {
         for (int i = upgrades.Count - 1; i > 0; i--)
         {
@@ -62,5 +54,6 @@ public class LevelUpMenu : MonoBehaviour
     {
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.visible = false;
     }
 }

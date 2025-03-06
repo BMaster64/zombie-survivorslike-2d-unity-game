@@ -175,7 +175,18 @@ public class UpgradeManager : MonoBehaviour
             var flightKnife = weapon.GetComponent<FlightKnife>();
             if (flightKnife != null)
             {
+                // Update rotation speed
                 flightKnife.rotationSpeed = upgrade.GetCurrentValue();
+
+                // Find and update the EnemyDamager component in the child object
+                EnemyDamager damager = weapon.GetComponentInChildren<EnemyDamager>();
+                if (damager != null)
+                {
+                    // For the damage, we'll use a base value plus an increment per level
+                    float baseDamage = 5f; // Base damage at level 1
+                    float damagePerLevel = 2.5f; // Damage increase per level
+                    damager.baseDamage = baseDamage + (upgrade.level * damagePerLevel);
+                }
             }
         }
         // Add configuration for other weapon types

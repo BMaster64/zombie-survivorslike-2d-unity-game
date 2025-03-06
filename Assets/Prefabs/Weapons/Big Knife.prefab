@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 200
+  damage: 10
 --- !u!1 &8596898664671517372
 GameObject:
   m_ObjectHideFlags: 0

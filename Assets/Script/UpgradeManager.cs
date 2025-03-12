@@ -183,7 +183,7 @@ public class UpgradeManager : MonoBehaviour
                 if (damager != null)
                 {
                     // For the damage, we'll use a base value plus an increment per level
-                    float baseDamage = 5f; // Base damage at level 1
+                    float baseDamage = 10f; // Base damage at level 1
                     float damagePerLevel = 2.5f; // Damage increase per level
                     damager.baseDamage = baseDamage + (upgrade.level * damagePerLevel);
                 }
@@ -231,15 +231,23 @@ public class UpgradeManager : MonoBehaviour
                     playerStats.currentDefense += upgradeValue;
                     break;
                 case "speed":
-                    var movement = playerStats.GetComponent<PlayerMovement>();
-                    if (movement != null)
-                    {
-                        movement.moveSpeed += upgradeValue;
-                    }
+                    playerStats.moveSpeedMultiplier += upgradeValue;
+                    playerStats.UpdateMovementSpeed(); // Call update method
                     break;
                 case "health":
                     playerStats.healthMultiplier += upgradeValue;
                     playerStats.UpdateMaxHealth();
+                    break;
+                case "regen":
+                    playerStats.healthRegenAmount += upgradeValue;
+                    break;
+                case "attackspeed":
+                    playerStats.attackSpeedMultiplier += upgradeValue;
+                    break;
+                case "xpcollection":
+                    playerStats.xpGainMultiplier += upgradeValue;
+                    playerStats.pickupRangeMultiplier += upgradeValue / 2; // Half the boost to range
+                    playerStats.UpdatePickupRange(); // Update pickup range
                     break;
                     // Add other stats as needed
             }

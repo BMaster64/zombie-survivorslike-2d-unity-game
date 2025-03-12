@@ -42,14 +42,6 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*spawnCounter -= Time.deltaTime;
-        if(spawnCounter <= 0)
-        {
-            spawnCounter = timeToSpawn;
-
-            Instantiate(enemyToSpawn, SelectSpawnPoint(), transform.rotation);
-        }*/
-
         if (PlayerHealth.instance.gameObject.activeSelf)
         {
             if (currentWave < waves.Count)

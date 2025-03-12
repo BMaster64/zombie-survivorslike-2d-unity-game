@@ -12,11 +12,18 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    private PlayerStats playerStats;
 
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Cursor.visible = false; // Hide default cursor
+
+        playerStats = player.GetComponent<PlayerStats>();
+        if (playerStats == null)
+        {
+            playerStats = player.GetComponentInParent<PlayerStats>();
+        }
     }
 
     void Update()
@@ -43,12 +50,16 @@ public class Shooting : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, rotZ);
         }
-
+        float adjustedTimeBetweenFiring = timeBetweenFiring;
+        if (playerStats != null)
+        {
+            adjustedTimeBetweenFiring /= playerStats.attackSpeedMultiplier; // Lower time = faster firing
+        }
         // Cơ chế bắn tự động
         if (!canFire)
         {
             timer += Time.deltaTime;
-            if (timer > timeBetweenFiring)
+            if (timer > adjustedTimeBetweenFiring)
             {
                 canFire = true;
                 timer = 0;

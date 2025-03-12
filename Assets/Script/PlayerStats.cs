@@ -7,16 +7,21 @@ public class PlayerStats : MonoBehaviour
     public float currentDefense = 0f;
     public float moveSpeedMultiplier = 1f;
     public float healthMultiplier = 1f;
+    public float healthRegenAmount = 0f;
+    public float attackSpeedMultiplier = 1f;
 
     [Header("Other Stats")]
     public float pickupRangeMultiplier = 1f;
+    public float xpGainMultiplier = 1f;  
 
     private PlayerHealth playerHealth;
+    private PlayerMovement playerMovement;
     // You can add more stats here as needed
 
     private void Start()
     {
         // Initialize any starting stats
+        playerMovement = GetComponent<PlayerMovement>();
         UpdateMovementSpeed();
         UpdatePickupRange();
 
@@ -26,19 +31,17 @@ public class PlayerStats : MonoBehaviour
 
     public void UpdateMovementSpeed()
     {
-        var movement = GetComponent<PlayerMovement>();
-        if (movement != null)
+        if (playerMovement != null)
         {
-            movement.moveSpeed *= moveSpeedMultiplier;
+            playerMovement.moveSpeed *= moveSpeedMultiplier;
         }
     }
 
     public void UpdatePickupRange()
     {
-        var movement = GetComponent<PlayerMovement>();
-        if (movement != null)
+        if (playerMovement != null)
         {
-            movement.pickupRange *= pickupRangeMultiplier;
+            playerMovement.pickupRange *= pickupRangeMultiplier;
         }
     }
 

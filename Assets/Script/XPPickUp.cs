@@ -11,11 +11,14 @@ public class XPPickUp : MonoBehaviour
     private float checkCounter;
 
     private PlayerMovement player;
+    private PlayerStats playerStats;
 
     // Start is called before the first frame update
     void Start()
     {
         player = PlayerHealth.instance.GetComponent<PlayerMovement>();
+        playerStats = player.GetComponent<PlayerStats>();
+
     }
 
     // Update is called once per frame
@@ -31,8 +34,8 @@ public class XPPickUp : MonoBehaviour
             if(checkCounter <= 0)
             {
                 checkCounter = timeBetweenChecks;
-
-                if(Vector3.Distance(transform.position, player.transform.position) < player.pickupRange)
+                float effectiveRange = player.pickupRange;
+                if (Vector3.Distance(transform.position, player.transform.position) < effectiveRange)
                 {
                     movingToPlayer = true;
                     moveSpeed += player.moveSpeed;
@@ -45,8 +48,13 @@ public class XPPickUp : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            XPLevelController.instance.GetExp(expValue);
+            int modifiedExpValue = expValue;
+            if (playerStats != null)
+            {
+                modifiedExpValue = Mathf.RoundToInt(expValue * playerStats.xpGainMultiplier);
+            }
 
+            XPLevelController.instance.GetExp(modifiedExpValue);
             Destroy(gameObject);
         }
     }

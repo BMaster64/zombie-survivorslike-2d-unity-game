@@ -190,6 +190,33 @@ public class UpgradeManager : MonoBehaviour
             }
         }
         // Add configuration for other weapon types
+        else if (upgrade.upgradeID.Contains("grenade"))
+        {
+            var grenadeLauncher = weapon.GetComponent<GrenadeLauncher>();
+            if (grenadeLauncher != null)
+            {
+                // Apply upgrades based on level
+                switch (upgrade.level)
+                {
+                    case 1: // Level 1 - Base stats
+                            // Base stats already set in prefab
+                        break;
+                    case 2: // Level 2 - Increase damage
+                        grenadeLauncher.UpgradeDamage(1.3f);
+                        break;
+                    case 3: // Level 3 - Increase range
+                        grenadeLauncher.UpgradeRange(1.4f);
+                        break;
+                    case 4: // Level 4 - Extra grenade
+                        grenadeLauncher.UpgradeMaxTargets(1);
+                        break;
+                    case 5: // Level 5 - Final damage boost
+                        grenadeLauncher.UpgradeDamage(1.5f);
+                        break;
+                }
+            }
+        }
+
     }
 
     private GameObject FindWeaponByID(string upgradeID)

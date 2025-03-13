@@ -73,12 +73,14 @@
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUIData.cs" />
     <Compile Include="Assets\Script\GameHUDManager.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Audio\CheckMusicVolume.cs" />
+    <Compile Include="Assets\Script\Grenade.cs" />
     <Compile Include="Assets\Script\DamageNumber.cs" />
     <Compile Include="Assets\Script\UpgradeData.cs" />
     <Compile Include="Assets\Script\UpgradeManager.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ExtraLinks.cs" />
     <Compile Include="Assets\Script\BulletScript.cs" />
     <Compile Include="Assets\Script\PlayerStats.cs" />
+    <Compile Include="Assets\Script\ExplosionEffect.cs" />
     <Compile Include="Assets\Script\LevelUpMenu.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\DamageNumberController.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Assets\Script\FlightKnife.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UISettingsManager.cs" />
     <Compile Include="Assets\Script\Shooting.cs" />
+    <Compile Include="Assets\Script\GrenadeLauncher.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>

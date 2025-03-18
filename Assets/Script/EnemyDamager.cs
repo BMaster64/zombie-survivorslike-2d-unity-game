@@ -23,5 +23,10 @@ public class EnemyDamager : MonoBehaviour
             float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
             collision.GetComponent<EnemyMovement>().TakeDamage(finalDamage);
         }
+        if (collision.tag == "Boss")
+        {
+            float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
+            collision.GetComponent<BossEnemy>().TakeDamage(finalDamage);
+        }
     }
 }

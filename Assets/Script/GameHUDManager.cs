@@ -4,6 +4,8 @@ using TMPro;
 
 public class GameHUDManager : MonoBehaviour
 {
+    public static GameHUDManager instance;
+
     [Header("Timer")]
     public TextMeshProUGUI timerText;
     private float gameTime = 0f;
@@ -11,6 +13,23 @@ public class GameHUDManager : MonoBehaviour
     [Header("XP System")]
     public Slider xpBar;
     public TextMeshProUGUI levelText;
+
+    [Header("Score System")]
+    public TextMeshProUGUI scoreText;
+    private int playerScore = 0;
+    void Awake()
+    {
+        // Set up singleton instance
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+    }
+    void Start()
+    {
+        // Initialize score display
+        UpdateScoreUI();
+    }
 
     void Update()
     {
@@ -33,6 +52,16 @@ public class GameHUDManager : MonoBehaviour
     public void UpdateLevelUI(int level)
     {
         levelText.text = "Lvl " + level.ToString();
+    }
+    public void AddScore(int points)
+    {
+        playerScore += points;
+        UpdateScoreUI();
+    }
+
+    public void UpdateScoreUI()
+    {
+        scoreText.text = "Score: " + playerScore.ToString();
     }
 
     public void TriggerLevelUpMenu()

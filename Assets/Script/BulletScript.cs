@@ -32,6 +32,12 @@ public class BulletScript : MonoBehaviour
             collision.GetComponent<EnemyMovement>().TakeDamage(finalDamage);
             Destroy(gameObject);
         }
+        else if (collision.tag == "Boss")
+        {
+            float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
+            collision.GetComponent<BossEnemy>().TakeDamage(finalDamage);
+            Destroy(gameObject);
+        }
     }
 
     void OnBecameInvisible()

@@ -37,7 +37,7 @@ public class GrenadeLauncher : MonoBehaviour
     void ThrowGrenades()
     {
         // Find enemies within range
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, grenadeRange, LayerMask.GetMask("Enemy"));
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, grenadeRange, LayerMask.GetMask("Enemy", "Boss"));
 
         // Sort by distance
         List<Collider2D> sortedEnemies = new List<Collider2D>(enemies);

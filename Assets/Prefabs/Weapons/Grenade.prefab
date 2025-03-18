@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4814775984787587797, guid: 9f5355d0cec00fe4d9f6f6ad51b07186, type: 3}
       propertyPath: m_Name
-      value: Grenade Variant
+      value: Grenade
       objectReference: {fileID: 0}
     - target: {fileID: 8129052442488119550, guid: 9f5355d0cec00fe4d9f6f6ad51b07186, type: 3}
       propertyPath: m_LocalScale.x

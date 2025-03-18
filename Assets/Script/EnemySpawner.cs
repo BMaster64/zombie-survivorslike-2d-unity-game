@@ -3,39 +3,28 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyToSpawn;
-
-    public float timeToSpawn;
-    private float spawnCounter;
-
-    public Transform minSpawn, maxSpawn;
-
     private Transform target;
-
     private GameObject player;
-
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
+    public Transform minSpawn, maxSpawn;
     public List<WaveInfo> waves;
 
     private int currentWave;
-
     private float waveCounter;
-
-
+    private List<EnemySpawnCounter> enemySpawnCounters = new List<EnemySpawnCounter>();
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnCounter = timeToSpawn;
-
         player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
         {
-            target = player.GetComponent<Transform>();
+            target = player.transform;
         }
-        currentWave--;
+
+        currentWave = -1;
         GoToNextWave();
     }
 
@@ -46,26 +35,41 @@ public class EnemySpawner : MonoBehaviour
         {
             if (currentWave < waves.Count)
             {
+                // Count down the current wave time
                 waveCounter -= Time.deltaTime;
                 if (waveCounter <= 0)
                 {
                     GoToNextWave();
                 }
 
-                spawnCounter -= Time.deltaTime;
-                if (spawnCounter <= 0)
+                // Process each enemy type in the current wave
+                for (int i = 0; i < enemySpawnCounters.Count; i++)
                 {
-                    spawnCounter = waves[currentWave].timeBetweenSpawns;
+                    EnemySpawnCounter counter = enemySpawnCounters[i];
 
-                    GameObject newEnemy = Instantiate(waves[currentWave].enemyToSpawn, SelectSpawnPoint(), Quaternion.identity);
+                    // Check if we still need to spawn more of this enemy type
+                    if (counter.remainingSpawns > 0)
+                    {
+                        counter.spawnTimer -= Time.deltaTime;
+                        if (counter.spawnTimer <= 0)
+                        {
+                            // Reset timer and spawn enemy
+                            counter.spawnTimer = counter.info.timeBetweenSpawns;
+                            counter.remainingSpawns--;
 
-                    spawnedEnemies.Add(newEnemy);
+                            GameObject newEnemy = Instantiate(counter.info.enemyPrefab, SelectSpawnPoint(), Quaternion.identity);
+                            spawnedEnemies.Add(newEnemy);
+                        }
+                    }
                 }
             }
         }
 
-        transform.position = target.position;
-
+        // Keep the spawner at the player's position
+        if (target != null)
+        {
+            transform.position = target.position;
+        }
     }
 
     public Vector3 SelectSpawnPoint()
@@ -113,15 +117,45 @@ public class EnemySpawner : MonoBehaviour
             currentWave = waves.Count - 1;
         }
 
+        // Set the wave time
         waveCounter = waves[currentWave].waveLength;
-        spawnCounter = waves[currentWave].timeBetweenSpawns;
+
+        // Initialize spawn counters for each enemy type in this wave
+        enemySpawnCounters.Clear();
+        foreach (EnemySpawnInfo enemyInfo in waves[currentWave].enemies)
+        {
+            EnemySpawnCounter counter = new EnemySpawnCounter
+            {
+                info = enemyInfo,
+                spawnTimer = enemyInfo.initialDelay,
+                remainingSpawns = enemyInfo.numberOfEnemies
+            };
+
+            enemySpawnCounters.Add(counter);
+        }
+    }
+
+    // Helper class to track spawning of each enemy type
+    private class EnemySpawnCounter
+    {
+        public EnemySpawnInfo info;
+        public float spawnTimer;
+        public int remainingSpawns;
     }
 }
 
 [System.Serializable]
 public class WaveInfo
 {
-    public GameObject enemyToSpawn;
-    public float waveLength = 10f;
+    public float waveLength = 30f;
+    public List<EnemySpawnInfo> enemies = new List<EnemySpawnInfo>();
+}
+
+[System.Serializable]
+public class EnemySpawnInfo
+{
+    public GameObject enemyPrefab;
+    public int numberOfEnemies = 10;
     public float timeBetweenSpawns = 1f;
+    public float initialDelay = 0f; // Delay before first spawn of this enemy type
 }

@@ -5,7 +5,7 @@ public class Grenade : MonoBehaviour
 {
     public float explosionDelay = 1.5f;
     public float explosionRadius = 2f;
-    public float baseDamage = 15f;
+    public float baseDamage = 10f;
     public GameObject explosionEffectPrefab;
 
     private Vector3 targetPosition;
@@ -71,7 +71,7 @@ public class Grenade : MonoBehaviour
     void Explode()
     {
         // Apply damage to all enemies within radius
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Enemy"));
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Enemy", "Boss"));
 
         // Calculate final damage considering player stats
         float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
@@ -80,6 +80,7 @@ public class Grenade : MonoBehaviour
         {
             // Apply damage to each enemy in explosion radius
             enemy.GetComponent<EnemyMovement>()?.TakeDamage(finalDamage);
+            enemy.GetComponent<BossEnemy>()?.TakeDamage(finalDamage);
         }
 
         // Spawn explosion effect

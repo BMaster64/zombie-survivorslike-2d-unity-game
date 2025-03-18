@@ -61,8 +61,8 @@
     <Analyzer Include="D:\Unity\Hub\Editor\6000.0.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Components\CinemachineSplineDollyLookAtTargets.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\ThirdParty\Clipper.Offset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Components\CinemachineSplineDollyLookAtTargets.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\DeprecatedAttributes.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\ThirdParty\Clipper.Minkowski.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Core\CinemachineBlenderSettings.cs" />

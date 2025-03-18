@@ -67,6 +67,7 @@
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Audio\CheckSFXVolume.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUI.cs" />
     <Compile Include="Assets\Script\CameraMovement.cs" />
+    <Compile Include="Assets\Script\BossEnemy.cs" />
     <Compile Include="Assets\Script\XPPickUp.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUIElement.cs" />
     <Compile Include="Assets\Script\XPLevelController.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Script\LevelUpMenu.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\DamageNumberController.cs" />
+    <Compile Include="Assets\Script\GasBomb.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UIMenuManager.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ResetDemo.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
@@ -111,7 +113,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Mini_Pixel_2D_Weapons\READ ME.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -1116,6 +1117,10 @@
       <Project>{799EFBD6-E9DF-9AB5-B603-9D93F7DFAF6C}</Project>
       <Name>PsdPlugin</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{5C346DB5-7433-642F-2CB6-94B5636898E9}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Editor.csproj">
       <Project>{6515DCDA-588E-0E6C-71AB-733C1CF3103C}</Project>
       <Name>Unity.2D.Common.Editor</Name>
@@ -1172,13 +1177,13 @@
       <Project>{C02E7F1A-3540-084F-1B65-AFC1A121F3BE}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{A8899289-8670-D098-1F02-204EFF7A8DFC}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
       <Project>{2FB6BE75-58B0-B5B7-B15E-C7962A1B4325}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{A8899289-8670-D098-1F02-204EFF7A8DFC}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj">
       <Project>{FD589D00-9F9C-3FDD-DE07-48D6700009E3}</Project>
@@ -1284,6 +1289,14 @@
       <Project>{51DB97E8-86AE-C613-B113-6A8C8B9F686F}</Project>
       <Name>Unity.Multiplayer.Center.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
+      <Project>{B952789E-AFC0-8757-48AD-800C1BF6AA0F}</Project>
+      <Name>Unity.AI.Navigation.Updater</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshPlus.csproj">
+      <Project>{3AFD537D-5DEA-EDE5-6938-F83ADAB3BA02}</Project>
+      <Name>NavMeshPlus</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
       <Project>{B123D4CE-713B-DE96-7F9A-739FC45F7C2A}</Project>
       <Name>Unity.VisualScripting.Flow.Editor</Name>
@@ -1312,6 +1325,10 @@
       <Project>{E4918549-443B-199B-3DDD-D09E3A7A854E}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{AB1CF05B-9A98-802E-096E-5A69B1F8AD71}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{D8F164F1-40CB-E0DE-522C-D63F40D148BC}</Project>
       <Name>Unity.Mathematics</Name>
@@ -1339,6 +1356,14 @@
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
       <Project>{FFD87719-3434-F736-ABDC-BAB0FD3E3CD4}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
+      <Project>{8494F135-F626-1CDD-8564-4B9F95EA0A13}</Project>
+      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshPlusEditor.csproj">
+      <Project>{33CE9C3D-BFCE-C6EE-E872-E235E946EBD3}</Project>
+      <Name>NavMeshPlusEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
       <Project>{118F9A8C-AAB5-8B80-DFDC-887A32355183}</Project>

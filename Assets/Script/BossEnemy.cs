@@ -18,7 +18,7 @@ public class BossEnemy : MonoBehaviour
     public float attackCooldown = 3f;
     private float lastAttackTime;
     private bool isAttacking = false;
-
+    public int scoreValue = 1;
     public float hitWaitTime = 0.5f;
     private float hitCounter;
 
@@ -44,6 +44,11 @@ public class BossEnemy : MonoBehaviour
     void Update()
     {
         if (player == null) return;
+
+        if (hitCounter > 0)
+        {
+            hitCounter -= Time.deltaTime;
+        }
 
         // Check if we should attack
         float distanceToPlayer = Vector2.Distance(transform.position, target.position);
@@ -78,8 +83,20 @@ public class BossEnemy : MonoBehaviour
 
         if (health <= 0)
         {
+            // Notify GameManager that boss is defeated
+            if (GameManager.instance != null)
+            {
+                GameHUDManager.instance.AddScore(scoreValue);
+                GameManager.instance.BossDefeated();
+            }
+
+            // Spawn drop if specified
+            if (drop != null)
+            {
+                Instantiate(drop, transform.position, drop.transform.rotation);
+            }
+
             Destroy(gameObject);
-            Instantiate(drop, transform.position, drop.transform.rotation);
         }
 
         DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
@@ -91,7 +108,7 @@ public class BossEnemy : MonoBehaviour
         if (player && hitCounter <= 0f)
         {
             player.TakeDamage(damage);
-            hitCounter = hitWaitTime; 
+            hitCounter = hitWaitTime;
         }
     }
     IEnumerator PerformAttack()

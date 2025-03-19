@@ -79,6 +79,7 @@
     <Compile Include="Assets\Script\UpgradeData.cs" />
     <Compile Include="Assets\Script\UpgradeManager.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ExtraLinks.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\BulletScript.cs" />
     <Compile Include="Assets\Script\PlayerStats.cs" />
     <Compile Include="Assets\Script\ExplosionEffect.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\DamageNumberController.cs" />
     <Compile Include="Assets\Script\GasBomb.cs" />
+    <Compile Include="Assets\Script\EndGameScreen.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UIMenuManager.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ResetDemo.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UISettingsManager.cs" />
     <Compile Include="Assets\Script\Shooting.cs" />
     <Compile Include="Assets\Script\GrenadeLauncher.cs" />
+    <Compile Include="Assets\Script\HighScoreManager.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>

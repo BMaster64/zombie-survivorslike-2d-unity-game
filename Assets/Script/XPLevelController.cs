@@ -1,5 +1,5 @@
 using UnityEngine;
- 
+
 public class XPLevelController : MonoBehaviour
 {
     public static XPLevelController instance;
@@ -50,6 +50,13 @@ public class XPLevelController : MonoBehaviour
         currentLevel++;
         currentExperience -= experienceToNextLevel;
         experienceToNextLevel = Mathf.RoundToInt(experienceToNextLevel * experienceMultiplier);
+
+        // Add score for level up
+        if (GameHUDManager.instance != null)
+        {
+            // Add score based on level (adjust multiplier as needed)
+            GameHUDManager.instance.AddScore(currentLevel);
+        }
 
         // Update UI and trigger level up menu
         if (hudManager != null)

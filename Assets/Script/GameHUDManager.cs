@@ -8,7 +8,7 @@ public class GameHUDManager : MonoBehaviour
 
     [Header("Timer")]
     public TextMeshProUGUI timerText;
-    private float gameTime = 0f;
+    public float gameTime = 0f;
 
     [Header("XP System")]
     public Slider xpBar;
@@ -17,6 +17,7 @@ public class GameHUDManager : MonoBehaviour
     [Header("Score System")]
     public TextMeshProUGUI scoreText;
     private int playerScore = 0;
+
     void Awake()
     {
         // Set up singleton instance
@@ -25,6 +26,7 @@ public class GameHUDManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
     }
+
     void Start()
     {
         // Initialize score display
@@ -53,10 +55,14 @@ public class GameHUDManager : MonoBehaviour
     {
         levelText.text = "Lvl " + level.ToString();
     }
+
     public void AddScore(int points)
     {
         playerScore += points;
         UpdateScoreUI();
+
+        // Store current score for end game screen
+        PlayerPrefs.SetInt("CurrentScore", playerScore);
     }
 
     public void UpdateScoreUI()

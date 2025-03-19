@@ -41,8 +41,14 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= actualDamage;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
+            // Notify GameManager of player death
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.ShowEndGameScreen("Game Over");
+            }
+
             gameObject.SetActive(false);
         }
 
@@ -64,6 +70,4 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
-
-
 }

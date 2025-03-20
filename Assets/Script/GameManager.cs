@@ -90,27 +90,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(boss);
         }
-
-        // Optional: You can also find enemies by their component types
-        // This is useful if you have enemies without the "Enemy" tag
-        BossEnemy[] bossEnemies = FindObjectsOfType<BossEnemy>();
-        foreach (BossEnemy bossEnemy in bossEnemies)
-        {
-            Destroy(bossEnemy.gameObject);
-        }
-
-        // If you have a base Enemy class or other enemy types, you can destroy them here
-        // Enemy[] normalEnemies = FindObjectsOfType<Enemy>();
-        // foreach (Enemy enemy in normalEnemies)
-        // {
-        //     Destroy(enemy.gameObject);
-        // }
     }
     public void ShowEndGameScreen(string title)
     {
         if (gameOver) return;
 
         gameOver = true;
+
         DestroyAllEnemies();
 
         Time.timeScale = 0f; // Pause the game

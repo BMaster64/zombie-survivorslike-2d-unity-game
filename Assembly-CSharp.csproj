@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\DamageNumber.cs" />
     <Compile Include="Assets\Script\UpgradeData.cs" />
     <Compile Include="Assets\Script\UpgradeManager.cs" />
+    <Compile Include="Assets\Script\ObstacleGenerator.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ExtraLinks.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\BulletScript.cs" />

@@ -80,12 +80,14 @@
     <Compile Include="Assets\Script\UpgradeManager.cs" />
     <Compile Include="Assets\Script\ObstacleGenerator.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ExtraLinks.cs" />
+    <Compile Include="Assets\Script\UpgradeItemUI.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\BulletScript.cs" />
     <Compile Include="Assets\Script\PlayerStats.cs" />
     <Compile Include="Assets\Script\ExplosionEffect.cs" />
     <Compile Include="Assets\Script\LevelUpMenu.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
+    <Compile Include="Assets\Script\PauseScreen.cs" />
     <Compile Include="Assets\Script\DamageNumberController.cs" />
     <Compile Include="Assets\Script\GasBomb.cs" />
     <Compile Include="Assets\Script\EndGameScreen.cs" />

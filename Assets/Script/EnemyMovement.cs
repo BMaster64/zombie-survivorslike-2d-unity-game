@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
     private float pathTimer;
     public int scoreValue = 1;
     public GameObject drop;
+    public int xpDropAmount = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -167,11 +168,26 @@ public class EnemyMovement : MonoBehaviour
             {
                 GameHUDManager.instance.AddScore(scoreValue);
             }
+            // Spawn XP drops
+            SpawnXPDrops();
             Destroy(gameObject);
-            Instantiate(drop, transform.position, drop.transform.rotation);
         }
 
         DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
+    }
+    private void SpawnXPDrops()
+    {
+        if (drop == null || xpDropAmount <= 0) return;
+
+        for (int i = 0; i < xpDropAmount; i++)
+        {
+            // Calculate a random position within the drop radius
+            Vector2 randomOffset = Random.insideUnitCircle * 0.5f;
+            Vector3 dropPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0);
+
+            // Instantiate the XP prefab
+            Instantiate(drop, dropPosition, Quaternion.identity);
+        }
     }
 
     public void TakeDamage(float damageToTake, bool shouldKnockBack)

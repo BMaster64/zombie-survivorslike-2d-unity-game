@@ -224,3 +224,4 @@ MonoBehaviour:
   scoreValue: 100
   hitWaitTime: 0.5
   drop: {fileID: 0}
+  xpDropAmount: 0

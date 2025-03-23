@@ -70,9 +70,11 @@
     <Compile Include="Assets\Script\BossEnemy.cs" />
     <Compile Include="Assets\Script\XPPickUp.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUIElement.cs" />
+    <Compile Include="Assets\Script\Character2Special.cs" />
     <Compile Include="Assets\Script\XPLevelController.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUIData.cs" />
     <Compile Include="Assets\Script\GameHUDManager.cs" />
+    <Compile Include="Assets\Script\Character1Special.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Audio\CheckMusicVolume.cs" />
     <Compile Include="Assets\Script\Grenade.cs" />
     <Compile Include="Assets\Script\DamageNumber.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Script\TopTouch.cs" />
     <Compile Include="Assets\Script\FlightKnife.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UISettingsManager.cs" />
+    <Compile Include="Assets\Script\AbilityCooldownUI.cs" />
     <Compile Include="Assets\Script\Shooting.cs" />
     <Compile Include="Assets\Script\GrenadeLauncher.cs" />
     <Compile Include="Assets\Script\HighScoreManager.cs" />
@@ -113,6 +116,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Backyard - Free\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />

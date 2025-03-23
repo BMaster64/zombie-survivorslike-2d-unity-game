@@ -207,3 +207,4 @@ MonoBehaviour:
   pathRecalculationTime: 0.5
   scoreValue: 3
   drop: {fileID: 1274436598764680933, guid: 72bf86e99f88aeb4096cefcf32813fc6, type: 3}
+  xpDropAmount: 2

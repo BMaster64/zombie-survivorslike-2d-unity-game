@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 3566303620550373213}
   - component: {fileID: 3685151921557142274}
   - component: {fileID: 1912932199043149688}
+  - component: {fileID: -5788616155828434501}
   m_Layer: 0
   m_Name: Player_2
   m_TagString: Player
@@ -666,7 +667,7 @@ MonoBehaviour:
   healthRegenAmount: 0
   attackSpeedMultiplier: 1
   pickupRangeMultiplier: 1
-  xpGainMultiplier: 10
+  xpGainMultiplier: 5
 --- !u!50 &3685151921557142274
 Rigidbody2D:
   serializedVersion: 5
@@ -740,6 +741,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.16, y: 1.17}
   m_EdgeRadius: 0
+--- !u!114 &-5788616155828434501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938387791312400834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90d266b45f77344c8a6fb63f4ca4704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeedBoost: 10
+  attackSpeedDuration: 5
+  attackSpeedCooldown: 50
+  attackSpeedEffect: {fileID: 0}
+  abilityIcon: {fileID: 0}
 --- !u!1 &7219756832361729564
 GameObject:
   m_ObjectHideFlags: 0

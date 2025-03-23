@@ -57,6 +57,8 @@ MonoBehaviour:
   spreadAngle: 30
   minSpreadVariation: 0.7
   maxSpreadVariation: 1.3
+  minSpeedMultiplier: 0.8
+  maxSpeedMultiplier: 1.2
 --- !u!1 &2467936642807288291
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +239,7 @@ GameObject:
   - component: {fileID: 8707653061353891960}
   - component: {fileID: 7143355490144651059}
   - component: {fileID: 6384835369137461811}
+  - component: {fileID: 8613273804727326556}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -461,7 +464,25 @@ MonoBehaviour:
   healthRegenAmount: 0
   attackSpeedMultiplier: 1
   pickupRangeMultiplier: 1
-  xpGainMultiplier: 1
+  xpGainMultiplier: 5
+--- !u!114 &8613273804727326556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202503368299858205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5183e95003a5ef42a556c25c1aa2061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashDistance: 8
+  dashDuration: 0.3
+  dashCooldown: 3
+  invulnerableDuringDash: 1
+  dashEffect: {fileID: 0}
+  abilityIcon: {fileID: 0}
 --- !u!1 &3359006186799009017
 GameObject:
   m_ObjectHideFlags: 0

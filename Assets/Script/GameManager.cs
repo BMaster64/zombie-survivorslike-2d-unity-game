@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour
     public string mainMenuScene = "Main Menu";
     public string gameplayScene = "Stage01";
 
+    [Header("Stage Goal")]
+    public string stageGoalText = "Survive!";
+    public float goalMessageDuration = 3f;
+    public GameObject goalMessagePanel;
+    public TMPro.TextMeshProUGUI goalMessageText;
+
     [Header("End Game Screen")]
     public GameObject endGameScreen;
     public TMPro.TextMeshProUGUI endGameTitleText;
@@ -42,7 +48,14 @@ public class GameManager : MonoBehaviour
             endGameScreen.SetActive(false);
         }
     }
+    private void Start()
+    {
+        // Show the goal message at the start of the game
+        ShowGoalMessage();
 
+        // Reset timescale in case it was set to 0 in a previous game
+        Time.timeScale = 1f;
+    }
     private void Update()
     {
         if (gameOver) return;
@@ -64,7 +77,41 @@ public class GameManager : MonoBehaviour
             ShowEndGameScreen("Game Over");
         }
     }
+    private void ShowGoalMessage()
+    {
+        if (goalMessagePanel != null && goalMessageText != null)
+        {
+            // Format goal message based on game settings
+            string formattedGoal = stageGoalText;
 
+            // If using time limit, include the time in the message
+            if (useTimeLimit && stageGoalText.Contains("{time}"))
+            {
+                int minutes = Mathf.FloorToInt(gameTimeLimit / 60f);
+                int seconds = Mathf.FloorToInt(gameTimeLimit % 60f);
+                string timeFormat = string.Format("{0}:{1:00}", minutes, seconds);
+                formattedGoal = stageGoalText.Replace("{time}", timeFormat);
+            }
+
+            // Set the goal text
+            goalMessageText.text = formattedGoal;
+
+            // Show the goal panel
+            goalMessagePanel.SetActive(true);
+
+            // Hide after duration
+            StartCoroutine(HideGoalMessage());
+        }
+    }
+
+    private IEnumerator HideGoalMessage()
+    {
+        yield return new WaitForSeconds(goalMessageDuration);
+        if (goalMessagePanel != null)
+        {
+            goalMessagePanel.SetActive(false);
+        }
+    }
     public void BossDefeated()
     {
         if (useBossDefeat && !gameOver)

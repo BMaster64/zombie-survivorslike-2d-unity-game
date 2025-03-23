@@ -23,6 +23,7 @@ public class BossEnemy : MonoBehaviour
     private float hitCounter;
 
     public GameObject? drop;
+    public int xpDropAmount = 1;
     // Animation parameter names
     private const string ATTACK_TRIGGER = "attack";
 
@@ -90,16 +91,26 @@ public class BossEnemy : MonoBehaviour
                 GameManager.instance.BossDefeated();
             }
 
-            // Spawn drop if specified
-            if (drop != null)
-            {
-                Instantiate(drop, transform.position, drop.transform.rotation);
-            }
-
+            // Spawn XP drops
+            SpawnXPDrops();
             Destroy(gameObject);
         }
 
         DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
+    }
+    private void SpawnXPDrops()
+    {
+        if (drop == null || xpDropAmount <= 0) return;
+
+        for (int i = 0; i < xpDropAmount; i++)
+        {
+            // Calculate a random position within the drop radius
+            Vector2 randomOffset = Random.insideUnitCircle * 0.5f;
+            Vector3 dropPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0);
+
+            // Instantiate the XP prefab
+            Instantiate(drop, dropPosition, Quaternion.identity);
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {

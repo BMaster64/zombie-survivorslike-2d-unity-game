@@ -74,6 +74,7 @@ public class Character2Special : MonoBehaviour, AbilityCooldownUI.ISpecialAbilit
         {
             GameObject effect = Instantiate(attackSpeedEffect, transform.position, Quaternion.identity);
             effect.transform.SetParent(transform);
+            effect.transform.localPosition = new Vector3((float)0.21, (float)0.6, 0);
             Destroy(effect, attackSpeedDuration);
         }
 

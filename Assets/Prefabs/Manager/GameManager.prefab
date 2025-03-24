@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6068129675668777370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6210326776300123455}
+  - component: {fileID: 5096257251573848332}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6210326776300123455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068129675668777370}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 354.94064, y: 191.54773, z: 1.3545034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5096257251573848332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068129675668777370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b15a9aaad969248a4e0899f8fc4ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTimeLimit: 60
+  useTimeLimit: 1
+  useBossDefeat: 0
+  mainMenuScene: Main Menu
+  gameplayScene: Stage01
+  stageGoalText: 'Objective: Survive for 1 minute!'
+  goalMessageDuration: 3
+  goalMessagePanel: {fileID: 0}
+  goalMessageText: {fileID: 0}
+  endGameScreen: {fileID: 0}
+  endGameTitleText: {fileID: 0}
+  endGameScoreText: {fileID: 0}
+  endGameTimeText: {fileID: 0}
+  endGameLevelText: {fileID: 0}

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &281200910974905794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8088228377843764087}
+  - component: {fileID: 69155261277347702}
+  m_Layer: 0
+  m_Name: ObstacleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8088228377843764087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281200910974905794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69155261277347702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281200910974905794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9909d48b8bdf3c244a2e5a4da1fab337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePrefabs:
+  - {fileID: 1433412574457806919, guid: b13499e6d29e0f744b987de5475e6e74, type: 3}
+  - {fileID: 2459861399543020268, guid: de88e63d746dcd84ba054aa1cc3bb020, type: 3}
+  - {fileID: 4887678427712081789, guid: 1f5c91c56b349cb439806f79b963a89b, type: 3}
+  - {fileID: 4434179419450279431, guid: 0df3b4137e1a32c43a1ebe4787c0e22e, type: 3}
+  - {fileID: 782360640444152534, guid: 482b5ba79752ad1448b19a4c09270f2b, type: 3}
+  - {fileID: 9056398592538599308, guid: 1780750dbfe25ff4a827d2a7dc4f4b89, type: 3}
+  - {fileID: 2948244540568331407, guid: 482010ec3d182d145bf0b8411b9e9ef4, type: 3}
+  - {fileID: 7861204705515029601, guid: e71b16439d6d3734d93baa1caf61ad3f, type: 3}
+  minObstacles: 20
+  maxObstacles: 30
+  minScale: 2
+  maxScale: 2
+  mapWidth: 86.6
+  mapHeight: 54
+  mapCenter: {fileID: 8088228377843764087}
+  playerSafeRadius: 6.16
+  maxPlacementAttempts: 50
+  minDistanceBetweenObstacles: 2
+  navMeshSurface: {fileID: 0}

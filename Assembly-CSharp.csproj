@@ -91,6 +91,7 @@
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\PauseScreen.cs" />
     <Compile Include="Assets\Script\DamageNumberController.cs" />
+    <Compile Include="Assets\Script\DestroyOnExit.cs" />
     <Compile Include="Assets\Script\GasBomb.cs" />
     <Compile Include="Assets\Script\EndGameScreen.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UIMenuManager.cs" />

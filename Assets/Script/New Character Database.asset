@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - characterSprite: {fileID: -5281272030589196440, guid: 1b8c0db55b545f54aa9398cc42c6ecc7, type: 3}
+    characterPrefab: {fileID: 3202503368299858205, guid: 1f189751e35e04e468a113b4b23d9ac4, type: 3}
   - characterSprite: {fileID: -5281272030589196440, guid: 4b6cc3f255e5f1d4b90f7ac631427fd7, type: 3}
+    characterPrefab: {fileID: 6938387791312400834, guid: 317306a9e40a16143b4fc4827a3876f2, type: 3}

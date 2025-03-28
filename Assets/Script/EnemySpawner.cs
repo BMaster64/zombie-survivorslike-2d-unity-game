@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -15,11 +15,20 @@ public class EnemySpawner : MonoBehaviour
     private int currentWave;
     private float waveCounter;
     private List<EnemySpawnCounter> enemySpawnCounters = new List<EnemySpawnCounter>();
+    public Transform enemySpawnPoint; // Thêm trường này
+
+
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = Camera.main;
+
+        // Nếu không gán enemySpawnPoint, sử dụng transform hiện tại
+        if (enemySpawnPoint == null)
+        {
+            enemySpawnPoint = transform;
+        }
 
         currentWave = -1;
         GoToNextWave();

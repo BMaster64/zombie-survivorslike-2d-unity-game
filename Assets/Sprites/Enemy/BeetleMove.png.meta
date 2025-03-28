@@ -141,6 +141,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -509,7 +535,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BeetleMove_0: 3301814176316817368
+      BeetleMove_1: 3886913951836277831
+      BeetleMove_10: 4942849810573559932
+      BeetleMove_11: 6779269788488812842
+      BeetleMove_12: -6511286009908575064
+      BeetleMove_13: -1428355933962015087
+      BeetleMove_14: -6421752655104874162
+      BeetleMove_15: -559612029383561433
+      BeetleMove_2: -5949412103197232599
+      BeetleMove_3: -6072124039633877317
+      BeetleMove_4: 8606294505560144630
+      BeetleMove_5: -6019875582119635767
+      BeetleMove_6: -5048577910020285096
+      BeetleMove_7: -8892443600754002395
+      BeetleMove_8: 984645546390310914
+      BeetleMove_9: 4608537421171935048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

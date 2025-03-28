@@ -482,7 +482,7 @@ MonoBehaviour:
   dashCooldown: 3
   invulnerableDuringDash: 1
   phasesThroughEnemies: 1
-  dashEffect: {fileID: 0}
+  dashEffect: {fileID: 6745120598991831538, guid: 5a1065f29e9dc174ebdafef73a3ee326, type: 3}
   abilityIcon: {fileID: 0}
 --- !u!1 &3359006186799009017
 GameObject:

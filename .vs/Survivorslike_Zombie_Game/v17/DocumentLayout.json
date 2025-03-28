@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|h:\\fpt aint shit\\pru212\\test2\\my-repo\\survivorslike_zombie_game\\assets\\script\\charactermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\charactermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|h:\\fpt aint shit\\pru212\\test2\\my-repo\\survivorslike_zombie_game\\assets\\script\\characterspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\characterspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\assets\\script\\stageselectionbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\stageselectionbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|h:\\fpt aint shit\\pru212\\test2\\my-repo\\survivorslike_zombie_game\\assets\\script\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|h:\\fpt aint shit\\pru212\\test2\\my-repo\\survivorslike_zombie_game\\assets\\script\\charactermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\charactermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42FC7E92-220B-E0EA-7497-5210F98B2D17}|Assembly-CSharp.csproj|H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\assets\\script\\gamemanager1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Character.cs",
+              "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\Character.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Character.cs",
+              "ToolTip": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\Character.cs",
+              "RelativeToolTip": "Assets\\Script\\Character.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T01:50:39.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CharacterSpawner.cs",
+              "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\CharacterSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CharacterSpawner.cs",
+              "ToolTip": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\CharacterSpawner.cs",
+              "RelativeToolTip": "Assets\\Script\\CharacterSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T01:47:30.284Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -94,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CharacterManager.cs",
               "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\CharacterManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CharacterManager.cs",
@@ -107,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GameManager1.cs",
               "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\GameManager1.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameManager1.cs",
@@ -115,12 +149,11 @@
               "RelativeToolTip": "Assets\\Script\\GameManager1.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwCYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T01:22:01.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T01:22:01.95Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "GameManager.cs",
               "DocumentMoniker": "H:\\FPT aint shit\\PRU212\\Test2\\my-repo\\Survivorslike_Zombie_Game\\Assets\\Script\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameManager.cs",
@@ -128,8 +161,7 @@
               "RelativeToolTip": "Assets\\Script\\GameManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T01:21:51.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T01:21:51.22Z"
             },
             {
               "$type": "Document",

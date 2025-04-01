@@ -62,10 +62,10 @@ public class CharacterManager : MonoBehaviour
         switch (StageSelectionManager.SelectedStage)
         {
             case 1:
-                SceneManager.LoadScene("Stage01 1");
+                SceneManager.LoadScene("Stage01");
                 break;
             case 2:
-                SceneManager.LoadScene("Stage02 1");
+                SceneManager.LoadScene("Stage02");
                 break;
             default:
                 Debug.LogError("Invalid Stage Selected");

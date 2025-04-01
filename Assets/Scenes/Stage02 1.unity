@@ -1153,9 +1153,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3091821477577969166, guid: 1f189751e35e04e468a113b4b23d9ac4, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3202503368299858205, guid: 1f189751e35e04e468a113b4b23d9ac4, type: 3}
       propertyPath: m_Name
       value: Character 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202503368299858205, guid: 1f189751e35e04e468a113b4b23d9ac4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5066585305375064075, guid: 1f189751e35e04e468a113b4b23d9ac4, type: 3}
       propertyPath: m_Enabled
@@ -8150,6 +8158,7 @@ SceneRoots:
   - {fileID: 2332460770527801346}
   - {fileID: 1944242281}
   - {fileID: 435770260}
+  - {fileID: 847273853}
   - {fileID: 51966713}
   - {fileID: 1823469080}
   - {fileID: 1277502260}
@@ -8158,4 +8167,3 @@ SceneRoots:
   - {fileID: 1788872326}
   - {fileID: 1648817628}
   - {fileID: 8151184342041646368}
-  - {fileID: 847273853}

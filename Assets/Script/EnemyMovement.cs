@@ -65,7 +65,7 @@ public class EnemyMovement : MonoBehaviour
             agent.SetDestination(target.position);
         }
 
-        moveSpeed = Random.Range(moveSpeed * 0.8f, moveSpeed * 1.2f);
+        /*moveSpeed = Random.Range(moveSpeed * 0.8f, moveSpeed * 1.2f);*/
 
         // Initialize path timer
         pathTimer = pathRecalculationTime;

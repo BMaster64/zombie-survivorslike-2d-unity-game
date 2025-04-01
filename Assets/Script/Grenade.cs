@@ -16,7 +16,6 @@ public class Grenade : MonoBehaviour
     private Vector3 startPosition;
     private float journeyTime;
     private float journeyLength;
-
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -70,17 +69,41 @@ public class Grenade : MonoBehaviour
 
     void Explode()
     {
+        bool firstEnemyKilled = false;
         // Apply damage to all enemies within radius
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Enemy", "Boss"));
-
         // Calculate final damage considering player stats
         float finalDamage = baseDamage * (playerStats != null ? playerStats.attackMultiplier : 1f);
 
         foreach (Collider2D enemy in hitEnemies)
         {
             // Apply damage to each enemy in explosion radius
-            enemy.GetComponent<EnemyMovement>()?.TakeDamage(finalDamage);
-            enemy.GetComponent<BossEnemy>()?.TakeDamage(finalDamage);
+            EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
+            bool wasAlive = true;
+            
+            if (enemyMovement != null)
+            {
+                wasAlive = enemyMovement.health > finalDamage;
+                enemyMovement.TakeDamage(finalDamage);
+
+                // If enemy was killed by grenade, add extra 5 points
+                if (!wasAlive)
+                {
+                    if (!firstEnemyKilled)
+                    {
+                        firstEnemyKilled = true;
+                    }
+                    else
+                    {
+                        // Subsequent enemies get extra 5 points
+                        if (GameHUDManager.instance != null)
+                        {
+                            GameHUDManager.instance.AddScore(5);
+                        }
+                    }
+                }
+            }
+
         }
 
         // Spawn explosion effect

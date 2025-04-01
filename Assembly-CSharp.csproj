@@ -111,7 +111,6 @@
     <Compile Include="Assets\Script\AbilityCooldownUI.cs" />
     <Compile Include="Assets\Script\Shooting.cs" />
     <Compile Include="Assets\Script\GrenadeLauncher.cs" />
-    <Compile Include="Assets\Script\HighScoreManager.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>

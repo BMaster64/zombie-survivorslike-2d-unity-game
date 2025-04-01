@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject endGameScreen;
     public TMPro.TextMeshProUGUI endGameTitleText;
     public TMPro.TextMeshProUGUI endGameScoreText;
+    public TMPro.TextMeshProUGUI endGameHighScoreText;
     public TMPro.TextMeshProUGUI endGameTimeText;
     public TMPro.TextMeshProUGUI endGameLevelText;
 
@@ -151,7 +152,11 @@ public class GameManager : MonoBehaviour
 
         // Get data from GameHUDManager
         GameHUDManager hudManager = GameHUDManager.instance;
+        // Get current score
+        int currentScore = PlayerPrefs.GetInt("CurrentScore", 0);
 
+        // Update high score if needed
+        UpdateHighScore(currentScore);
         // Set up end game screen
         if (endGameScreen != null)
         {
@@ -161,7 +166,10 @@ public class GameManager : MonoBehaviour
                 endGameTitleText.text = title;
 
             if (endGameScoreText != null)
-                endGameScoreText.text = "Score: " + PlayerPrefs.GetInt("CurrentScore", 0).ToString();
+                endGameScoreText.text = "Score: " + currentScore.ToString();
+
+            if (endGameHighScoreText != null)
+                endGameHighScoreText.text = "High Score: " + GetHighScore().ToString();
 
             if (endGameTimeText != null)
             {
@@ -179,6 +187,21 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+    private void UpdateHighScore(int newScore)
+    {
+        int currentHighScore = GetHighScore();
+        if (newScore > currentHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", newScore);
+            PlayerPrefs.Save(); // Ensure the high score is saved immediately
+        }
+    }
+
+    // Method to retrieve high score
+    public int GetHighScore()
+    {
+        return PlayerPrefs.GetInt("HighScore", 0);
     }
 
     public void ReturnToMainMenu()

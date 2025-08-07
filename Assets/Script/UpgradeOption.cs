@@ -82,11 +82,8 @@ public class UpgradeOption : MonoBehaviour
         // Apply the upgrade through the UpgradeManager
         UpgradeManager.instance.ApplyUpgrade(currentUpgrade);
 
-        // Close the menu
+        // Close the menu (cursor management is handled in LevelUpMenu.UpgradeSelected())
         menuManager.UpgradeSelected();
-
-        // Hide cursor if it was visible
-        Cursor.visible = false;
     }
 
     // Optional: Add hover effects

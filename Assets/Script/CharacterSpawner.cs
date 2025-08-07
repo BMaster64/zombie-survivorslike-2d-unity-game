@@ -22,7 +22,14 @@ public class CharacterSpawner : MonoBehaviour
         if (selectedCharacter?.characterPrefab != null)
         {
             Debug.Log("Instantiating character prefab");
-            Instantiate(selectedCharacter.characterPrefab, spawnPoint.position, spawnPoint.rotation);
+            GameObject spawnedCharacter = Instantiate(selectedCharacter.characterPrefab, spawnPoint.position, spawnPoint.rotation);
+            
+            // Ensure the spawned character has the "Player" tag
+            if (spawnedCharacter != null)
+            {
+                spawnedCharacter.tag = "Player";
+                Debug.Log($"Character spawned at position: {spawnPoint.position} with tag: {spawnedCharacter.tag}");
+            }
         }
         else
         {

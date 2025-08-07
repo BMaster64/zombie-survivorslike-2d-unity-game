@@ -25,4 +25,10 @@ public class StageSelectionManager : MonoBehaviour
             SelectedStage = PlayerPrefs.GetInt("SelectedStage", 1);
         }
     }
+    
+    private void Start()
+    {
+        // Ensure cursor is visible in stage selection
+        CursorManager.SetCursorForGameState(GameState.StageSelection);
+    }
 }

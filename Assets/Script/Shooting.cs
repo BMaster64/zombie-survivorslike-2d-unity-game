@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        Cursor.visible = false; // Hide default cursor
+        CursorManager.SetCursorForGameState(GameState.Playing); // Hide cursor during gameplay
 
         playerStats = player.GetComponent<PlayerStats>();
         if (playerStats == null)

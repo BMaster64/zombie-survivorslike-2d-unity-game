@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class LevelUpMenu : MonoBehaviour
@@ -20,6 +21,7 @@ public class LevelUpMenu : MonoBehaviour
     {
         menuPanel.SetActive(true);
         Time.timeScale = 0f;
+        CursorManager.SetCursorForGameState(GameState.LevelUp);
 
         List<UpgradeData> availableUpgrades = UpgradeManager.instance.GetAvailableUpgrades();
         ShuffleUpgrades(availableUpgrades);
@@ -54,6 +56,21 @@ public class LevelUpMenu : MonoBehaviour
     {
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
-        Cursor.visible = false;
+        
+        // Force a cursor state refresh to prevent glitches
+        StartCoroutine(RefreshCursorAfterUpgrade());
+    }
+    
+    private System.Collections.IEnumerator RefreshCursorAfterUpgrade()
+    {
+        // Wait a frame to ensure UI is fully closed
+        yield return null;
+        
+        // Set cursor for gameplay
+        CursorManager.SetCursorForGameState(GameState.Playing);
+        
+        // Additional safety check after a small delay
+        yield return new WaitForSecondsRealtime(0.1f);
+        CursorManager.SetCursorForGameState(GameState.Playing);
     }
 }

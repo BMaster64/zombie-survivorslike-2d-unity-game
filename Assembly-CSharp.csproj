@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CharacterSpawner1.cs" />
     <Compile Include="Assets\Script\EnemyMovement.cs" />
+    <Compile Include="Assets\Script\CursorManager.cs" />
     <Compile Include="Assets\Script\EnemyDamager.cs" />
     <Compile Include="Assets\Script\UpgradeOption.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Audio\CheckSFXVolume.cs" />

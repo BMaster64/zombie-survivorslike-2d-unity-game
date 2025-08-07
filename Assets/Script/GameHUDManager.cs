@@ -73,6 +73,6 @@ public class GameHUDManager : MonoBehaviour
     public void TriggerLevelUpMenu()
     {
         LevelUpMenu.instance.OpenLevelUpMenu();
-        Cursor.visible = true;
+        // Cursor visibility is now handled in LevelUpMenu.OpenLevelUpMenu()
     }
 }

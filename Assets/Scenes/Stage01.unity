@@ -1267,7 +1267,7 @@ PrefabInstance:
       objectReference: {fileID: 369103799}
     - target: {fileID: 5096257251573848332, guid: 814d926f89032fc43b87400102e69df9, type: 3}
       propertyPath: gameTimeLimit
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5096257251573848332, guid: 814d926f89032fc43b87400102e69df9, type: 3}
       propertyPath: endGameTimeText

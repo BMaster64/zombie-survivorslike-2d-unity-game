@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
         DestroyAllEnemies();
 
         Time.timeScale = 0f; // Pause the game
-        Cursor.visible = true;
+        CursorManager.SetCursorForGameState(GameState.GameOver);
 
         // Get data from GameHUDManager
         GameHUDManager hudManager = GameHUDManager.instance;

@@ -66,6 +66,9 @@ public class PauseScreen : MonoBehaviour
         // Pause time
         Time.timeScale = 0f;
 
+        // Show cursor when paused
+        CursorManager.SetCursorForGameState(GameState.Paused);
+
         // Display pause screen
         SetPauseScreenActive(true);
 
@@ -78,15 +81,30 @@ public class PauseScreen : MonoBehaviour
         // Resume time
         Time.timeScale = 1f;
 
+        // Hide cursor when resuming gameplay
+        CursorManager.SetCursorForGameState(GameState.Playing);
+
         // Hide pause screen
         SetPauseScreenActive(false);
         isPaused = false;
+        
+        // Force refresh cursor state after a small delay to prevent glitches
+        StartCoroutine(RefreshCursorAfterResume());
+    }
+    
+    private System.Collections.IEnumerator RefreshCursorAfterResume()
+    {
+        yield return new WaitForSecondsRealtime(0.1f);
+        CursorManager.SetCursorForGameState(GameState.Playing);
     }
 
     void RestartGame()
     {
         // Resume time before restarting
         Time.timeScale = 1f;
+
+        // Hide cursor since we're restarting gameplay
+        CursorManager.SetCursorForGameState(GameState.Playing);
 
         // Call the restart method from your GameManager
         GameManager.instance.RestartGame();
@@ -96,6 +114,9 @@ public class PauseScreen : MonoBehaviour
     {
         // Resume time before returning to menu
         Time.timeScale = 1f;
+
+        // Show cursor for main menu navigation
+        CursorManager.SetCursorForGameState(GameState.MainMenu);
 
         // Call the main menu method from your GameManager
         GameManager.instance.ReturnToMainMenu();

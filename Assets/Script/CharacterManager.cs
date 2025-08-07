@@ -13,6 +13,9 @@ public class CharacterManager : MonoBehaviour
         // Always load saved data to get the correct selections
         Load();
         UpdateCharacter(selectedOption);
+        
+        // Ensure cursor is visible in character selection
+        CursorManager.SetCursorForGameState(GameState.CharacterSelection);
     }
     public void NextCharacter()
     {

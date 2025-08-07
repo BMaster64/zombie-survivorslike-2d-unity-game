@@ -15,19 +15,30 @@ public class EnemySpawner : MonoBehaviour
     private int currentWave;
     private float waveCounter;
     private List<EnemySpawnCounter> enemySpawnCounters = new List<EnemySpawnCounter>();
-    public Transform enemySpawnPoint; // Thêm trường này
 
 
 
     void Start()
     {
+        // Start initialization with a delay to ensure character is spawned first
+        StartCoroutine(InitializeSpawnerWithDelay());
+    }
+    
+    private System.Collections.IEnumerator InitializeSpawnerWithDelay()
+    {
+        // Wait a frame to allow CharacterSpawner to complete
+        yield return null;
+        
         player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = Camera.main;
-
-        // Nếu không gán enemySpawnPoint, sử dụng transform hiện tại
-        if (enemySpawnPoint == null)
+        
+        if (player != null)
         {
-            enemySpawnPoint = transform;
+            Debug.Log("EnemySpawner: Player found - " + player.name);
+        }
+        else
+        {
+            Debug.LogWarning("EnemySpawner: Player not found during initialization, will retry during spawning");
         }
 
         currentWave = -1;
@@ -69,14 +80,35 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
-
-        // REMOVED: No longer updating spawner position to match player
     }
 
     public Vector3 SelectSpawnPointOutsideCamera()
     {
-        if (mainCamera == null || player == null)
+        if (mainCamera == null)
             return Vector3.zero;
+        
+        // Calculate fixed map bounds (these don't move with the player)
+        float mapMinX = minSpawn.position.x;
+        float mapMaxX = maxSpawn.position.x;
+        float mapMinY = minSpawn.position.y;
+        float mapMaxY = maxSpawn.position.y;
+        
+        // If player is null, try to find it again (in case it was spawned after this script started)
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                Debug.Log("EnemySpawner: Found player after retry - " + player.name);
+            }
+        }
+        
+        // If still no player found, use fallback spawn method with map boundaries
+        if (player == null)
+        {
+            Debug.LogWarning("EnemySpawner: No player found, using map edge spawn fallback");
+            return GetMapEdgeSpawnPoint(mapMinX, mapMaxX, mapMinY, mapMaxY);
+        }
 
         // Calculate visible camera bounds
         float cameraHeight = 2f * mainCamera.orthographicSize;
@@ -85,17 +117,11 @@ public class EnemySpawner : MonoBehaviour
         // Get the camera's position (which should be centered on the player)
         Vector3 cameraPosition = mainCamera.transform.position;
 
-        // Calculate visible bounds with the minimum spawn distance
-        float visibleMinX = cameraPosition.x - (cameraWidth / 2) - minSpawnDistanceFromCamera;
-        float visibleMaxX = cameraPosition.x + (cameraWidth / 2) + minSpawnDistanceFromCamera;
-        float visibleMinY = cameraPosition.y - (cameraHeight / 2) - minSpawnDistanceFromCamera;
-        float visibleMaxY = cameraPosition.y + (cameraHeight / 2) + minSpawnDistanceFromCamera;
-
-        // Calculate fixed map bounds (these don't move with the player)
-        float mapMinX = minSpawn.position.x;
-        float mapMaxX = maxSpawn.position.x;
-        float mapMinY = minSpawn.position.y;
-        float mapMaxY = maxSpawn.position.y;
+        // Calculate camera visible area (enemies should NOT spawn inside this area)
+        float cameraMinX = cameraPosition.x - (cameraWidth / 2) - minSpawnDistanceFromCamera;
+        float cameraMaxX = cameraPosition.x + (cameraWidth / 2) + minSpawnDistanceFromCamera;
+        float cameraMinY = cameraPosition.y - (cameraHeight / 2) - minSpawnDistanceFromCamera;
+        float cameraMaxY = cameraPosition.y + (cameraHeight / 2) + minSpawnDistanceFromCamera;
 
         // Attempt to find a valid spawn point
         Vector3 spawnPoint = Vector3.zero;
@@ -112,9 +138,9 @@ public class EnemySpawner : MonoBehaviour
             float randomY = Random.Range(mapMinY, mapMaxY);
             spawnPoint = new Vector3(randomX, randomY, 0);
 
-            // Check if point is outside camera view
-            if (randomX < visibleMinX || randomX > visibleMaxX ||
-                randomY < visibleMinY || randomY > visibleMaxY)
+            // Check if point is outside camera view (not inside the camera's visible area)
+            if (randomX < cameraMinX || randomX > cameraMaxX ||
+                randomY < cameraMinY || randomY > cameraMaxY)
             {
                 validPointFound = true;
             }
@@ -123,6 +149,7 @@ public class EnemySpawner : MonoBehaviour
         // If we couldn't find a valid point, use fallback method (spawn at map edge)
         if (!validPointFound)
         {
+            Debug.LogWarning($"EnemySpawner: Could not find valid spawn point after {maxAttempts} attempts, using map edge fallback");
             return GetMapEdgeSpawnPoint(mapMinX, mapMaxX, mapMinY, mapMaxY);
         }
 

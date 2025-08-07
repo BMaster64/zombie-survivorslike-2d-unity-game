@@ -8,8 +8,21 @@ public class StageSelectionManager : MonoBehaviour
     {
         // Lưu stage được chọn 
         SelectedStage = stageId;
+        
+        // Cũng lưu vào PlayerPrefs để đảm bảo dữ liệu không bị mất
+        PlayerPrefs.SetInt("SelectedStage", stageId);
+        PlayerPrefs.Save();
 
         // Chuyển sang Scene chọn nhân vật
         UnityEngine.SceneManagement.SceneManager.LoadScene("CharacterSelect");
+    }
+    
+    // Load SelectedStage từ PlayerPrefs khi game khởi động
+    private void Awake()
+    {
+        if (SelectedStage == 0 && PlayerPrefs.HasKey("SelectedStage"))
+        {
+            SelectedStage = PlayerPrefs.GetInt("SelectedStage", 1);
+        }
     }
 }

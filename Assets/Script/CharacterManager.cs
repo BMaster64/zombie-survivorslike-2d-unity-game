@@ -10,14 +10,8 @@ public class CharacterManager : MonoBehaviour
     private int selectedStage = 0;
     private void Start()
     {
-        if (PlayerPrefs.HasKey("SelectedCharacter"))
-        {
-            selectedOption = 0;
-        }
-        else
-        {
-            Load();
-        }
+        // Always load saved data to get the correct selections
+        Load();
         UpdateCharacter(selectedOption);
     }
     public void NextCharacter()
@@ -74,18 +68,27 @@ public class CharacterManager : MonoBehaviour
     }
     private void Load()
     {
-        selectedOption = PlayerPrefs.GetInt("SelectedCharacter");
+        selectedOption = PlayerPrefs.GetInt("SelectedCharacter", 0);
 
-        // Nếu có stage được lưu trước đó
-        if (PlayerPrefs.HasKey("SelectedStage"))
+        // Lấy stage được chọn từ StageSelectionManager (nếu có)
+        // hoặc từ PlayerPrefs (nếu đã được lưu trước đó)
+        if (StageSelectionManager.SelectedStage != 0)
         {
-            selectedStage = PlayerPrefs.GetInt("SelectedStage");
+            selectedStage = StageSelectionManager.SelectedStage;
+        }
+        else if (PlayerPrefs.HasKey("SelectedStage"))
+        {
+            selectedStage = PlayerPrefs.GetInt("SelectedStage", 1);
+        }
+        else
+        {
+            selectedStage = 1; // Mặc định stage 1
         }
     }
     private void Save()
     {
         PlayerPrefs.SetInt("SelectedCharacter", selectedOption);
-        PlayerPrefs.SetInt("SelectedStage", selectedStage);
+        // Chỉ lưu character selection khi thay đổi, stage sẽ được lưu trong StartGame()
         PlayerPrefs.Save(); // Đảm bảo dữ liệu được lưu
     }
 

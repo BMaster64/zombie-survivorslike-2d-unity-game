@@ -59,6 +59,7 @@ MonoBehaviour:
   maxSpreadVariation: 1.3
   minSpeedMultiplier: 0.8
   maxSpeedMultiplier: 1.2
+  shootSound: {fileID: 8300000, guid: 5ff823f546b52574a931e1d9b44290a6, type: 3}
 --- !u!1 &957155509777026713
 GameObject:
   m_ObjectHideFlags: 0

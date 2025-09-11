@@ -60,9 +60,15 @@ public class Character2Special : MonoBehaviour, AbilityCooldownUI.ISpecialAbilit
         isAbilityReady = false;
         remainingCooldown = attackSpeedCooldown;
 
+        // Play skill sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.char2SkillSound);
+        }
+
         // Notify listeners that ability was activated
         OnAbilityActivated?.Invoke();
-
+        
         // Store original attack speed
         originalAttackSpeed = playerStats.attackSpeedMultiplier;
 

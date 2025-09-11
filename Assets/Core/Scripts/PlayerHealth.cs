@@ -46,8 +46,18 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= actualDamage;
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayDamageSound();
+        }
+
         if (currentHealth <= 0)
         {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.defeatSound);
+            }
+
             // Notify GameManager of player death
             if (GameManager.instance != null)
             {

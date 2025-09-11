@@ -75,6 +75,12 @@ public class Character1Special : MonoBehaviour, AbilityCooldownUI.ISpecialAbilit
         isAbilityReady = false;
         remainingCooldown = dashCooldown;
 
+        // Play skill sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.char1SkillSound);
+        }
+
         // Notify listeners that ability was activated
         OnAbilityActivated?.Invoke();
 

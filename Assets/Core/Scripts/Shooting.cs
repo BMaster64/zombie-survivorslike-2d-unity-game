@@ -25,6 +25,11 @@ public class Shooting : MonoBehaviour
     public float minSpeedMultiplier = 0.8f; // Minimum speed multiplier for shotgun bullets
     public float maxSpeedMultiplier = 1.2f; // Maximum speed multiplier for shotgun bullets
 
+    [Header("Audio")]
+    public AudioClip shootSound; // Assign the appropriate gun sound in inspector
+
+    private int characterType = 1; // Will be set automatically
+
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -35,6 +40,23 @@ public class Shooting : MonoBehaviour
         {
             playerStats = player.GetComponentInParent<PlayerStats>();
         }
+        
+        // Auto-detect character type
+        DetectCharacterType();
+    }
+
+    void DetectCharacterType()
+    {
+        // Method 1: Check if Character2Special component exists
+        if (GetComponentInParent<Character2Special>() != null)
+        {
+            characterType = 2;
+        }
+        else if (GetComponentInParent<Character1Special>() != null)
+        {
+            characterType = 1;
+        }
+        
     }
 
     void Update()
@@ -83,6 +105,13 @@ public class Shooting : MonoBehaviour
         if (canFire)
         {
             canFire = false;
+            
+            // Play weapon sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayWeaponSound(characterType);
+            }
+            
             if (isShotgun)
             {
                 FireShotgun();

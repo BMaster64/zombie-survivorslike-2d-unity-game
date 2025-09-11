@@ -59,6 +59,12 @@ public class GrenadeLauncher : MonoBehaviour
         {
             Transform enemyTransform = sortedEnemies[i].transform;
 
+            // Play grenade sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayGrenadeSound();
+            }
+
             // Create grenade at player position
             GameObject grenade = Instantiate(grenadePrefab, transform.position, Quaternion.identity);
 
